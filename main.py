@@ -78,16 +78,47 @@ def login_user(collection, username, password):
         return False, "User not found"
 def setusername():
     windowmain.usernamefield.setText("Hello, "+username)
+# def regiterproject():
+#     windowmain.pbar.show()
+#     def hidebtn():
+#         projectname=windowmain.newpname.text()
+#         windowmain.n1.setText(projectname) 
+#         windowmain.n1.show()
+#         windowmain.pbar.hide()
+#     windowmain.newpbtn.clicked.connect(hidebtn)
 def regiterproject():
     windowmain.pbar.show()
-    def hidebtn():
-        projectname=windowmain.newpname.text()
-        windowmain.n1.setText(projectname) 
-        windowmain.n1.show()
-        windowmain.pbar.hide()
-    windowmain.newpbtn.clicked.connect(hidebtn)
     
+    def hidebtn():
+        global username  # Access the global username variable
+        projectname = windowmain.newpname.text()
+        
+        # Update the project name in the data dictionary
+        user_data = collection.find_one({"username": username})
+        if user_data:
+            data = user_data["data"]
+            if "p1" in data:
+                new_data = {projectname: data["p1"]}
+                data.pop("p1")
+                
+                # Delete the "p1" key from the MongoDB document
+                collection.update_one({"username": username}, {"$unset": {"data.p1": 1}})
+                
+                # Update the MongoDB document with the new project name and data
+                collection.update_one({"username": username}, {"$set": {"data": new_data}})
+                
+                set_checkbox_states(checkboxes, new_data[projectname])  # Set checkbox states for the updated project
+                
+                windowmain.n1.setText(projectname) 
+                windowmain.n1.show()
+                windowmain.pbar.hide()
+
+    windowmain.newpbtn.clicked.connect(hidebtn)    
+
+
+
 def addnewproject():
+    print("rANN")
     windowmain.pbar.show()
     def hidebtn():
         projectname=windowmain.newpname.text()
@@ -158,7 +189,7 @@ if __name__ == "__main__":
             global password
             username = window.username.text()
             password = window.password.text()
-            data = {"p1": [1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0]}
+            data = {"p1": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
             register_success, register_msg = register_user(collection, username, password, data)
             print(register_msg)
             if register_success:
@@ -204,6 +235,7 @@ if __name__ == "__main__":
       ############################333\
       # data save
         windowmain.savebtn.clicked.connect(save)
+        windowmain.newbtn.clicked.connect(addnewproject)
         # int_list = [1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0]
         # set_checkbox_states(checkboxes, int_list)
         
