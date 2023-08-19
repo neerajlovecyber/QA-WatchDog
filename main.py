@@ -118,28 +118,71 @@ def regiterproject():
 
 
 def addnewproject():
-    print("rANN")
+    global currentproject  # Access the global currentproject variable
+    print("Adding a new project")
     windowmain.pbar.show()
+    user_data = collection.find_one({"username": username})
+
     def hidebtn():
-        projectname=windowmain.newpname.text()
-        windowmain.n1.setText(projectname) 
-        windowmain.n1.show()
-        windowmain.pbar.hide()
+        global currentproject  # Access the global currentproject variable
+        if user_data:
+            total_projects = len(user_data.get("data", {}))
+            print("Total projects:", total_projects)
+            total_projects = total_projects + 1
+            
+            projectname = windowmain.newpname.text()            
+            label_name = f"n{total_projects}"
+                
+            # Set the text of the label
+            label = getattr(windowmain, label_name)
+            label.setText(projectname)
+                
+            # Show the QLabel
+            label.show()
+                
+            # Update the current project
+            currentproject = projectname  # Update the current project name
+            
+            # Set checkbox values to 0 for the new project
+            new_project_data = [0] * 27  # Initialize with 27 zeros
+            set_checkbox_states(checkboxes, new_project_data)
+                
+            # Trigger layout update            
+            windowmain.layout().update()
+                
+            # Update the database with the new project data
+            update_query = {"username": username}
+            update_data = {"$set": {f"data.{projectname}": new_project_data}}
+            collection.update_one(update_query, update_data)
+                
+            windowmain.pbar.hide()
+            
     windowmain.newpbtn.clicked.connect(hidebtn)
+
+def project_menu(btn):
+    global currentproject
+
+    print("pmenu")
+    name=project_names[btn-1]
+    currentproject=name
+    user_data = collection.find_one({"username": username})
+    int_list = user_data["data"][name]
+    set_checkbox_states(checkboxes, int_list)
+
 def save():
-    
+    global currentproject  # Access the global currentproject variable
     checkbox_values = checkboxcheck()
-    if collection is not None:
+    
+    if collection is not None and currentproject:
         try:
             query = {"username": username, "password": password}
-            update = {"$set": {"data.p1": checkbox_values}}
+            update = {"$set": {f"data.{currentproject}": checkbox_values}}  # Use the current project name in the update query
             collection.update_one(query, update)
-            print("Data updated successfully")
+            print(f"Data for project '{currentproject}' updated successfully")
         except Exception as e:
             print("Error updating data:", str(e))
     else:
-        print("Not connected to MongoDB")
-
+        print("Not connected to MongoDB or no current project selected")
 
 
     
@@ -148,6 +191,8 @@ if __name__ == "__main__":
     print("Program start.")
     username=""
     password=""
+    currentproject=""
+    project_names=""
     app = QtWidgets.QApplication([])  # Create the application instance
     
     loader = QtUiTools.QUiLoader()
@@ -202,6 +247,7 @@ if __name__ == "__main__":
         def login_clicked():
             global username
             global password
+            global project_names
             username = window.username.text()
             password = window.password.text()
 
@@ -228,17 +274,44 @@ if __name__ == "__main__":
                         windowmain.n1.show()
                         int_list = user_data["data"][first_project_name]
                         set_checkbox_states(checkboxes, int_list)
+                    n=1
+                    for names in project_names:
+                        
+                        label_name = f"n{n}"
+            
+                            # Set the text of the label
+                        label = getattr(windowmain, label_name)
+                        label.setText(names)
+                        label.show()
+                        n=n+1
+            
+
+            
+            # Trigger layout update            
+        windowmain.layout().update()
 
         
         window.registerbtn.clicked.connect(register_clicked)
         window.loginbtn.clicked.connect(login_clicked)
-      ############################333\
-      # data save
         windowmain.savebtn.clicked.connect(save)
         windowmain.newbtn.clicked.connect(addnewproject)
-        # int_list = [1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0]
-        # set_checkbox_states(checkboxes, int_list)
-        
+################################3
+        windowmain.n1.clicked.connect(lambda: project_menu(1))
+        windowmain.n2.clicked.connect(lambda: project_menu(2))
+        windowmain.n3.clicked.connect(lambda: project_menu(3))
+        windowmain.n4.clicked.connect(lambda: project_menu(4))
+        windowmain.n5.clicked.connect(lambda: project_menu(5))
+        windowmain.n6.clicked.connect(lambda: project_menu(6))
+        windowmain.n7.clicked.connect(lambda: project_menu(7))
+        windowmain.n8.clicked.connect(lambda: project_menu(8))
+        windowmain.n9.clicked.connect(lambda: project_menu(9))
+        windowmain.n10.clicked.connect(lambda: project_menu(10))
+        windowmain.n11.clicked.connect(lambda: project_menu(11))
+        windowmain.n12.clicked.connect(lambda: project_menu(12))
+        windowmain.n13.clicked.connect(lambda: project_menu(13))
+        windowmain.n14.clicked.connect(lambda: project_menu(14))
+        windowmain.n15.clicked.connect(lambda: project_menu(15))
+
 
       #############333333333
         
