@@ -104,10 +104,10 @@
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../icons/login.webp</pixmap>
+         <pixmap>../icons/loginback.jpg</pixmap>
         </property>
         <property name="scaledContents">
-         <bool>true</bool>
+         <bool>false</bool>
         </property>
        </widget>
       </item>

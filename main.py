@@ -2,6 +2,9 @@ from PySide6 import QtWidgets, QtUiTools, QtCore
 import sys, os
 import pymongo
 import socket
+def exitfcn():
+    save()
+    exit()
 def update_project_names():
     user_data = collection.find_one({"username": username})
     if user_data:
@@ -338,7 +341,7 @@ if __name__ == "__main__":
         windowmain.n13.clicked.connect(lambda: project_menu(13))
         windowmain.n14.clicked.connect(lambda: project_menu(14))
         windowmain.n15.clicked.connect(lambda: project_menu(15))
-
+        windowmain.logout.clicked.connect(exitfcn)
 
       #############333333333
         
