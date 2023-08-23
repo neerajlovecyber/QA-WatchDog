@@ -2,6 +2,30 @@ from PySide6 import QtWidgets, QtUiTools, QtCore
 import sys, os
 import pymongo
 import socket
+def update_project_names():
+    user_data = collection.find_one({"username": username})
+    if user_data:
+        project_names = get_project_names(user_data["data"])
+        print("Project names:", project_names)
+        
+                    # Set the project name according to the first project in the list
+        first_project_name = project_names[0] if project_names else None
+        if first_project_name:
+            windowmain.n1.setText(first_project_name)
+            windowmain.n1.show()
+            int_list = user_data["data"][first_project_name]
+            set_checkbox_states(checkboxes, int_list)
+            n=1
+            for names in project_names:
+                        
+                label_name = f"n{n}"
+            
+                            # Set the text of the label
+                label = getattr(windowmain, label_name)
+                label.setText(names)
+                label.show()
+                n=n+1
+            
 def get_project_names(data):
     # Extract the keys from the "data" dictionary to get the project names
     project_names = list(data.keys())
@@ -121,10 +145,11 @@ def addnewproject():
     global currentproject  # Access the global currentproject variable
     print("Adding a new project")
     windowmain.pbar.show()
-    user_data = collection.find_one({"username": username})
+    
 
     def hidebtn():
         global currentproject  # Access the global currentproject variable
+        user_data = collection.find_one({"username": username})
         if user_data:
             total_projects = len(user_data.get("data", {}))
             print("Total projects:", total_projects)
@@ -134,11 +159,11 @@ def addnewproject():
             label_name = f"n{total_projects}"
                 
             # Set the text of the label
-            label = getattr(windowmain, label_name)
-            label.setText(projectname)
+            # label = getattr(windowmain, label_name)
+            # label.setText(projectname)
                 
-            # Show the QLabel
-            label.show()
+            # # Show the QLabel
+            # label.show()
                 
             # Update the current project
             currentproject = projectname  # Update the current project name
@@ -156,13 +181,17 @@ def addnewproject():
             collection.update_one(update_query, update_data)
                 
             windowmain.pbar.hide()
-            
+            update_project_names()
     windowmain.newpbtn.clicked.connect(hidebtn)
 
 def project_menu(btn):
     global currentproject
-
+    global project_names
     print("pmenu")
+    user_data = collection.find_one({"username": username})
+    if user_data:
+        project_names = get_project_names(user_data["data"])
+        print("Project names:", project_names)
     name=project_names[btn-1]
     currentproject=name
     user_data = collection.find_one({"username": username})
@@ -192,7 +221,7 @@ if __name__ == "__main__":
     username=""
     password=""
     currentproject=""
-    project_names=""
+    project_names=[]
     app = QtWidgets.QApplication([])  # Create the application instance
     
     loader = QtUiTools.QUiLoader()
@@ -260,9 +289,7 @@ if __name__ == "__main__":
                 windowmain.main_body.setEnabled(True)
                 user_data = collection.find_one({"username": username})
                 
-                # if user_data:
-                #     int_list = user_data["data"]["p1"]
-                #     set_checkbox_states(checkboxes, int_list)
+
                 if user_data:
                     project_names = get_project_names(user_data["data"])
                     print("Project names:", project_names)
