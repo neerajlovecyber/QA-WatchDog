@@ -2,6 +2,7 @@ from PySide6 import QtWidgets, QtUiTools, QtCore
 import sys, os
 import pymongo
 import socket
+from resources import nspc
 def exitfcn():
     save()
     exit()
@@ -148,7 +149,16 @@ def addnewproject():
     global currentproject  # Access the global currentproject variable
     print("Adding a new project")
     windowmain.pbar.show()
-    
+    # Check the number of existing projects
+    user_data = collection.find_one({"username": username})
+    if user_data:
+        total_projects = len(user_data.get("data", {}))
+        if total_projects >= 14:
+            print("Maximum number of projects reached (15)")
+            
+            windowmain.pbar.hide()
+            return
+     
 
     def hidebtn():
         global currentproject  # Access the global currentproject variable
@@ -200,6 +210,7 @@ def project_menu(btn):
     user_data = collection.find_one({"username": username})
     int_list = user_data["data"][name]
     set_checkbox_states(checkboxes, int_list)
+    
 
 def save():
     global currentproject  # Access the global currentproject variable
