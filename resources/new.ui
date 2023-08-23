@@ -1010,7 +1010,7 @@ background-color: rgb(160, 96, 255);
 </string>
             </property>
             <property name="currentIndex">
-             <number>2</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="p1">
              <property name="styleSheet">
@@ -1031,8 +1031,10 @@ QGroupBox::title {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     padding: 5px 150px;
-    background-color: #FF17365D;
+	padding-bottom:10px;
+   background-color: rgb(139, 6, 255);
     color: rgb(255, 255, 255);
+	
 }</string>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1069,7 +1071,7 @@ QGroupBox::title {
                  <property name="geometry">
                   <rect>
                    <x>0</x>
-                   <y>0</y>
+                   <y>-2231</y>
                    <width>800</width>
                    <height>3000</height>
                   </rect>
@@ -1091,6 +1093,7 @@ QGroupBox::title {
                     </property>
                     <property name="font">
                      <font>
+                      <family>Arial Rounded MT Bold</family>
                       <pointsize>-1</pointsize>
                      </font>
                     </property>
@@ -1106,6 +1109,12 @@ QGroupBox::title {
                      </property>
                      <item>
                       <widget class="QGroupBox" name="groupBox_2">
+                       <property name="font">
+                        <font>
+                         <family>Arial Rounded MT Bold</family>
+                         <pointsize>-1</pointsize>
+                        </font>
+                       </property>
                        <property name="title">
                         <string>Objective:</string>
                        </property>
@@ -1301,6 +1310,12 @@ QGroupBox::title {
                          <verstretch>0</verstretch>
                         </sizepolicy>
                        </property>
+                       <property name="font">
+                        <font>
+                         <family>Arial Rounded MT Bold</family>
+                         <pointsize>-1</pointsize>
+                        </font>
+                       </property>
                        <property name="title">
                         <string>Approch:</string>
                        </property>
@@ -1493,6 +1508,12 @@ QGroupBox::title {
                          <verstretch>0</verstretch>
                         </sizepolicy>
                        </property>
+                       <property name="font">
+                        <font>
+                         <family>Arial Rounded MT Bold</family>
+                         <pointsize>-1</pointsize>
+                        </font>
+                       </property>
                        <property name="title">
                         <string>Scope:</string>
                        </property>
@@ -1683,6 +1704,12 @@ QGroupBox::title {
                      </item>
                      <item>
                       <widget class="QGroupBox" name="groupBox_8">
+                       <property name="font">
+                        <font>
+                         <family>Arial Rounded MT Bold</family>
+                         <pointsize>-1</pointsize>
+                        </font>
+                       </property>
                        <property name="title">
                         <string>Test Deliverables</string>
                        </property>
@@ -1869,6 +1896,12 @@ QGroupBox::title {
                      </item>
                      <item>
                       <widget class="QGroupBox" name="groupBox_9">
+                       <property name="font">
+                        <font>
+                         <family>Arial Rounded MT Bold</family>
+                         <pointsize>-1</pointsize>
+                        </font>
+                       </property>
                        <property name="title">
                         <string>Dependencies:</string>
                        </property>
@@ -2056,6 +2089,12 @@ QGroupBox::title {
                      </item>
                      <item>
                       <widget class="QGroupBox" name="groupBox_10">
+                       <property name="font">
+                        <font>
+                         <family>Arial Rounded MT Bold</family>
+                         <pointsize>-1</pointsize>
+                        </font>
+                       </property>
                        <property name="title">
                         <string>Test Environment:</string>
                        </property>
@@ -2242,6 +2281,12 @@ QGroupBox::title {
                      </item>
                      <item>
                       <widget class="QGroupBox" name="groupBox_6">
+                       <property name="font">
+                        <font>
+                         <family>Arial Rounded MT Bold</family>
+                         <pointsize>-1</pointsize>
+                        </font>
+                       </property>
                        <property name="title">
                         <string>Risk Management:</string>
                        </property>
@@ -2429,6 +2474,12 @@ QGroupBox::title {
                      </item>
                      <item>
                       <widget class="QGroupBox" name="groupBox_7">
+                       <property name="font">
+                        <font>
+                         <family>Arial Rounded MT Bold</family>
+                         <pointsize>-1</pointsize>
+                        </font>
+                       </property>
                        <property name="title">
                         <string>Schedule:</string>
                        </property>
@@ -2615,6 +2666,12 @@ QGroupBox::title {
                      </item>
                      <item>
                       <widget class="QGroupBox" name="groupBox_5">
+                       <property name="font">
+                        <font>
+                         <family>Arial Rounded MT Bold</family>
+                         <pointsize>-1</pointsize>
+                        </font>
+                       </property>
                        <property name="title">
                         <string>Roles and Responsibilities:</string>
                        </property>
@@ -2818,6 +2875,7 @@ QGroupBox::title {
                     </property>
                     <property name="font">
                      <font>
+                      <family>Arial Rounded MT Bold</family>
                       <pointsize>13</pointsize>
                       <weight>75</weight>
                       <bold>true</bold>
@@ -2874,7 +2932,9 @@ QGroupBox::title {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     padding: 5px 150px;
-    background-color: #FF17365D;
+    
+	
+	background-color: rgb(93, 0, 255);
     color: rgb(255, 255, 255);
 }</string>
              </property>
@@ -2908,7 +2968,7 @@ QGroupBox::title {
                 <widget class="QWidget" name="scrollAreaWidgetContents_4">
                  <property name="geometry">
                   <rect>
-                   <x>0</x>
+                   <x>-238</x>
                    <y>0</y>
                    <width>800</width>
                    <height>3000</height>
