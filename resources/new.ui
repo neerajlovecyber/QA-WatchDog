@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>870</width>
+    <width>1373</width>
     <height>854</height>
    </rect>
   </property>
@@ -1013,6 +1013,12 @@ background-color: rgb(160, 96, 255);
              <number>0</number>
             </property>
             <widget class="QWidget" name="p1">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="styleSheet">
               <string notr="true">QGroupBox {
     border: 1px solid gray;
@@ -1058,6 +1064,12 @@ QGroupBox::title {
                 <property name="enabled">
                  <bool>true</bool>
                 </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -1071,19 +1083,19 @@ QGroupBox::title {
                  <property name="geometry">
                   <rect>
                    <x>0</x>
-                   <y>-2231</y>
-                   <width>800</width>
-                   <height>3000</height>
+                   <y>-924</y>
+                   <width>1023</width>
+                   <height>1724</height>
                   </rect>
                  </property>
                  <property name="minimumSize">
                   <size>
                    <width>800</width>
-                   <height>3000</height>
+                   <height>0</height>
                   </size>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_19">
-                  <item>
+                  <item alignment="Qt::AlignTop">
                    <widget class="QGroupBox" name="groupBox">
                     <property name="minimumSize">
                      <size>
@@ -1103,12 +1115,30 @@ QGroupBox::title {
                     <property name="title">
                      <string>Checklist For QA Planning</string>
                     </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_9">
+                    <layout class="QVBoxLayout" name="verticalLayout_114">
                      <property name="topMargin">
-                      <number>40</number>
+                      <number>35</number>
                      </property>
                      <item>
                       <widget class="QGroupBox" name="groupBox_2">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>100</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>200</height>
+                        </size>
+                       </property>
                        <property name="font">
                         <font>
                          <family>Arial Rounded MT Bold</family>
@@ -1119,15 +1149,27 @@ QGroupBox::title {
                         <string>Objective:</string>
                        </property>
                        <layout class="QVBoxLayout" name="verticalLayout_10">
+                        <property name="spacing">
+                         <number>10</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>15</number>
+                        </property>
                         <item>
-                         <widget class="QFrame" name="frame_2">
+                         <widget class="QFrame" name="frame_3">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_7">
+                          <layout class="QHBoxLayout" name="horizontalLayout_8">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -1135,7 +1177,7 @@ QGroupBox::title {
                             <number>0</number>
                            </property>
                            <property name="topMargin">
-                            <number>0</number>
+                            <number>15</number>
                            </property>
                            <property name="rightMargin">
                             <number>0</number>
@@ -1157,13 +1199,22 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_6">
-                             <property name="enabled">
-                              <bool>true</bool>
+                            <widget class="QLabel" name="label_7">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>50</height>
+                              </size>
                              </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -1171,7 +1222,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>What are the testing goals and objectives? (e.g., Validate the functionality of the payment gateway)</string>
+                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -1182,14 +1233,26 @@ QGroupBox::title {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QFrame" name="frame_3">
+                         <widget class="QFrame" name="frame">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>50</height>
+                           </size>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_8">
+                          <layout class="QHBoxLayout" name="horizontalLayout_5">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -1219,10 +1282,16 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_7">
+                            <widget class="QLabel" name="label_4">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -1230,7 +1299,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
+                              <string>How to define expected outcomes and success criteria? (e.g., Successful completion of a transaction, accurate data validation)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -1241,14 +1310,20 @@ QGroupBox::title {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QFrame" name="frame">
+                         <widget class="QFrame" name="frame_25">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_5">
+                          <layout class="QHBoxLayout" name="horizontalLayout_30">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -1278,10 +1353,22 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_4">
+                            <widget class="QLabel" name="label_28">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>50</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -1289,7 +1376,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>How to define expected outcomes and success criteria? (e.g., Successful completion of a transaction, accurate data validation)</string>
+                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -1303,32 +1390,55 @@ QGroupBox::title {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QGroupBox" name="groupBox_3">
+                      <widget class="QGroupBox" name="groupBox_83">
                        <property name="sizePolicy">
-                        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                          <horstretch>0</horstretch>
                          <verstretch>0</verstretch>
                         </sizepolicy>
                        </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>100</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>200</height>
+                        </size>
+                       </property>
                        <property name="font">
                         <font>
-                         <family>Arial Rounded MT Bold</family>
                          <pointsize>-1</pointsize>
                         </font>
                        </property>
                        <property name="title">
-                        <string>Approch:</string>
+                        <string>Objective:</string>
                        </property>
-                       <layout class="QVBoxLayout" name="verticalLayout_11">
+                       <layout class="QVBoxLayout" name="verticalLayout_113">
+                        <property name="spacing">
+                         <number>10</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>15</number>
+                        </property>
                         <item>
-                         <widget class="QFrame" name="frame_4">
+                         <widget class="QFrame" name="frame_280">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_9">
+                          <layout class="QHBoxLayout" name="horizontalLayout_286">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -1336,7 +1446,7 @@ QGroupBox::title {
                             <number>0</number>
                            </property>
                            <property name="topMargin">
-                            <number>0</number>
+                            <number>15</number>
                            </property>
                            <property name="rightMargin">
                             <number>0</number>
@@ -1358,10 +1468,22 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_8">
+                            <widget class="QLabel" name="label_283">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>50</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -1369,7 +1491,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>What are the testing goals and objectives? (e.g., Validate the functionality of the payment gateway)</string>
+                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -1380,14 +1502,26 @@ QGroupBox::title {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QFrame" name="frame_5">
+                         <widget class="QFrame" name="frame_281">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>50</height>
+                           </size>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_10">
+                          <layout class="QHBoxLayout" name="horizontalLayout_287">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -1417,10 +1551,16 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_9">
+                            <widget class="QLabel" name="label_284">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -1428,7 +1568,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>What level of testing to perform? (e.g., Unit testing for individual modules, integration testing for system components)</string>
+                              <string>How to define expected outcomes and success criteria? (e.g., Successful completion of a transaction, accurate data validation)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -1439,14 +1579,20 @@ QGroupBox::title {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QFrame" name="frame_6">
+                         <widget class="QFrame" name="frame_282">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_11">
+                          <layout class="QHBoxLayout" name="horizontalLayout_288">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -1476,10 +1622,22 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_10">
+                            <widget class="QLabel" name="label_285">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>50</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -1487,7 +1645,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>Which testing methodologies or frameworks to employ? (e.g., Behavior-driven development, test-driven development)</string>
+                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -1501,32 +1659,55 @@ QGroupBox::title {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QGroupBox" name="groupBox_4">
+                      <widget class="QGroupBox" name="groupBox_80">
                        <property name="sizePolicy">
-                        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                          <horstretch>0</horstretch>
                          <verstretch>0</verstretch>
                         </sizepolicy>
                        </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>100</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>200</height>
+                        </size>
+                       </property>
                        <property name="font">
                         <font>
-                         <family>Arial Rounded MT Bold</family>
                          <pointsize>-1</pointsize>
                         </font>
                        </property>
                        <property name="title">
-                        <string>Scope:</string>
+                        <string>Objective:</string>
                        </property>
-                       <layout class="QVBoxLayout" name="verticalLayout_12">
+                       <layout class="QVBoxLayout" name="verticalLayout_110">
+                        <property name="spacing">
+                         <number>10</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>15</number>
+                        </property>
                         <item>
-                         <widget class="QFrame" name="frame_7">
+                         <widget class="QFrame" name="frame_271">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_12">
+                          <layout class="QHBoxLayout" name="horizontalLayout_277">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -1534,7 +1715,7 @@ QGroupBox::title {
                             <number>0</number>
                            </property>
                            <property name="topMargin">
-                            <number>0</number>
+                            <number>15</number>
                            </property>
                            <property name="rightMargin">
                             <number>0</number>
@@ -1556,22 +1737,30 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_11">
+                            <widget class="QLabel" name="label_274">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>50</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
                                <bold>false</bold>
-                               <kerning>true</kerning>
                               </font>
                              </property>
-                             <property name="lineWidth">
-                              <number>3</number>
-                             </property>
                              <property name="text">
-                              <string>What is included in the testing scope? (e.g., Front-end user interface, back-end database)</string>
+                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -1582,14 +1771,26 @@ QGroupBox::title {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QFrame" name="frame_8">
+                         <widget class="QFrame" name="frame_272">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>50</height>
+                           </size>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_13">
+                          <layout class="QHBoxLayout" name="horizontalLayout_278">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -1619,10 +1820,16 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_12">
+                            <widget class="QLabel" name="label_275">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -1630,7 +1837,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>What functionalities or features are out of scope? (e.g., Third-party integrations not yet implemented)</string>
+                              <string>How to define expected outcomes and success criteria? (e.g., Successful completion of a transaction, accurate data validation)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -1641,14 +1848,20 @@ QGroupBox::title {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QFrame" name="frame_9">
+                         <widget class="QFrame" name="frame_273">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_14">
+                          <layout class="QHBoxLayout" name="horizontalLayout_279">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -1678,10 +1891,22 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_13">
+                            <widget class="QLabel" name="label_276">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>50</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -1689,7 +1914,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>Any specific boundaries or constraints? (e.g., Limited access to production data for testing purposes)</string>
+                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -1703,26 +1928,55 @@ QGroupBox::title {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QGroupBox" name="groupBox_8">
+                      <widget class="QGroupBox" name="groupBox_71">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>100</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>200</height>
+                        </size>
+                       </property>
                        <property name="font">
                         <font>
-                         <family>Arial Rounded MT Bold</family>
                          <pointsize>-1</pointsize>
                         </font>
                        </property>
                        <property name="title">
-                        <string>Test Deliverables</string>
+                        <string>Objective:</string>
                        </property>
-                       <layout class="QVBoxLayout" name="verticalLayout_16">
+                       <layout class="QVBoxLayout" name="verticalLayout_109">
+                        <property name="spacing">
+                         <number>10</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>15</number>
+                        </property>
                         <item>
-                         <widget class="QFrame" name="frame_19">
+                         <widget class="QFrame" name="frame_268">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_24">
+                          <layout class="QHBoxLayout" name="horizontalLayout_274">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -1730,7 +1984,7 @@ QGroupBox::title {
                             <number>0</number>
                            </property>
                            <property name="topMargin">
-                            <number>0</number>
+                            <number>15</number>
                            </property>
                            <property name="rightMargin">
                             <number>0</number>
@@ -1752,10 +2006,22 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_23">
+                            <widget class="QLabel" name="label_271">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>50</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -1763,7 +2029,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>What should the test plan document include? (e.g., Test objectives, test strategies)</string>
+                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -1774,14 +2040,26 @@ QGroupBox::title {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QFrame" name="frame_20">
+                         <widget class="QFrame" name="frame_269">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>50</height>
+                           </size>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_25">
+                          <layout class="QHBoxLayout" name="horizontalLayout_275">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -1811,10 +2089,16 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_24">
+                            <widget class="QLabel" name="label_272">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -1822,7 +2106,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>How to develop test cases, scripts, or scenarios? (e.g., Using a test management tool, writing test scripts in a programming language)</string>
+                              <string>How to define expected outcomes and success criteria? (e.g., Successful completion of a transaction, accurate data validation)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -1833,14 +2117,20 @@ QGroupBox::title {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QFrame" name="frame_21">
+                         <widget class="QFrame" name="frame_270">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_26">
+                          <layout class="QHBoxLayout" name="horizontalLayout_276">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -1870,10 +2160,22 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_25">
+                            <widget class="QLabel" name="label_273">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>50</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -1881,7 +2183,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>What test reports or summaries to generate? (e.g., Test execution summary, defect reports with severity and priority)</string>
+                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -1895,26 +2197,55 @@ QGroupBox::title {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QGroupBox" name="groupBox_9">
+                      <widget class="QGroupBox" name="groupBox_81">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>100</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>200</height>
+                        </size>
+                       </property>
                        <property name="font">
                         <font>
-                         <family>Arial Rounded MT Bold</family>
                          <pointsize>-1</pointsize>
                         </font>
                        </property>
                        <property name="title">
-                        <string>Dependencies:</string>
+                        <string>Objective:</string>
                        </property>
-                       <layout class="QVBoxLayout" name="verticalLayout_17">
+                       <layout class="QVBoxLayout" name="verticalLayout_111">
+                        <property name="spacing">
+                         <number>10</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>15</number>
+                        </property>
                         <item>
-                         <widget class="QFrame" name="frame_22">
+                         <widget class="QFrame" name="frame_274">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_27">
+                          <layout class="QHBoxLayout" name="horizontalLayout_280">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -1922,7 +2253,7 @@ QGroupBox::title {
                             <number>0</number>
                            </property>
                            <property name="topMargin">
-                            <number>0</number>
+                            <number>15</number>
                            </property>
                            <property name="rightMargin">
                             <number>0</number>
@@ -1944,10 +2275,22 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_26">
+                            <widget class="QLabel" name="label_277">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>50</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -1955,7 +2298,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>Are there any external dependencies impacting testing? (e.g., Availability of test environment, data from third-party systems)</string>
+                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -1966,14 +2309,26 @@ QGroupBox::title {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QFrame" name="frame_23">
+                         <widget class="QFrame" name="frame_275">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>50</height>
+                           </size>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_28">
+                          <layout class="QHBoxLayout" name="horizontalLayout_281">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -2003,10 +2358,16 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_27">
+                            <widget class="QLabel" name="label_278">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -2014,7 +2375,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>What prerequisite tasks or activities are required? (e.g., Completion of user interface design, integration of backend services)</string>
+                              <string>How to define expected outcomes and success criteria? (e.g., Successful completion of a transaction, accurate data validation)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -2025,14 +2386,20 @@ QGroupBox::title {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QFrame" name="frame_24">
+                         <widget class="QFrame" name="frame_276">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_29">
+                          <layout class="QHBoxLayout" name="horizontalLayout_282">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -2062,10 +2429,22 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_28">
+                            <widget class="QLabel" name="label_279">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>50</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -2073,8 +2452,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>How to address dependencies or interdependencies? (e.g., Collaborating with the UI development team to align on interface specifications)
- </string>
+                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -2088,26 +2466,55 @@ QGroupBox::title {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QGroupBox" name="groupBox_10">
+                      <widget class="QGroupBox" name="groupBox_62">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>100</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>200</height>
+                        </size>
+                       </property>
                        <property name="font">
                         <font>
-                         <family>Arial Rounded MT Bold</family>
                          <pointsize>-1</pointsize>
                         </font>
                        </property>
                        <property name="title">
-                        <string>Test Environment:</string>
+                        <string>Objective:</string>
                        </property>
-                       <layout class="QVBoxLayout" name="verticalLayout_18">
+                       <layout class="QVBoxLayout" name="verticalLayout_108">
+                        <property name="spacing">
+                         <number>10</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>15</number>
+                        </property>
                         <item>
-                         <widget class="QFrame" name="frame_25">
+                         <widget class="QFrame" name="frame_265">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_30">
+                          <layout class="QHBoxLayout" name="horizontalLayout_271">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -2115,7 +2522,7 @@ QGroupBox::title {
                             <number>0</number>
                            </property>
                            <property name="topMargin">
-                            <number>0</number>
+                            <number>15</number>
                            </property>
                            <property name="rightMargin">
                             <number>0</number>
@@ -2137,10 +2544,22 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_29">
+                            <widget class="QLabel" name="label_268">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>50</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -2148,7 +2567,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>What are the required hardware and software configurations? (e.g., Specific browser versions, minimum system requirements)\</string>
+                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -2159,14 +2578,26 @@ QGroupBox::title {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QFrame" name="frame_26">
+                         <widget class="QFrame" name="frame_266">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>50</height>
+                           </size>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_31">
+                          <layout class="QHBoxLayout" name="horizontalLayout_272">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -2196,10 +2627,16 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_30">
+                            <widget class="QLabel" name="label_269">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -2207,7 +2644,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>How to set up and configure the test environment? (e.g., Provisioning virtual machines, installing necessary software dependencies)</string>
+                              <string>How to define expected outcomes and success criteria? (e.g., Successful completion of a transaction, accurate data validation)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -2218,14 +2655,20 @@ QGroupBox::title {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QFrame" name="frame_27">
+                         <widget class="QFrame" name="frame_267">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_32">
+                          <layout class="QHBoxLayout" name="horizontalLayout_273">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -2255,10 +2698,22 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_31">
+                            <widget class="QLabel" name="label_270">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>50</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -2266,7 +2721,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>Are there any specific tools or frameworks needed? (e.g., Selenium for automated browser testing, JMeter for performance testing)</string>
+                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -2280,26 +2735,55 @@ QGroupBox::title {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QGroupBox" name="groupBox_6">
+                      <widget class="QGroupBox" name="groupBox_53">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>100</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>200</height>
+                        </size>
+                       </property>
                        <property name="font">
                         <font>
-                         <family>Arial Rounded MT Bold</family>
                          <pointsize>-1</pointsize>
                         </font>
                        </property>
                        <property name="title">
-                        <string>Risk Management:</string>
+                        <string>Objective:</string>
                        </property>
-                       <layout class="QVBoxLayout" name="verticalLayout_14">
+                       <layout class="QVBoxLayout" name="verticalLayout_107">
+                        <property name="spacing">
+                         <number>10</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>15</number>
+                        </property>
                         <item>
-                         <widget class="QFrame" name="frame_13">
+                         <widget class="QFrame" name="frame_262">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_18">
+                          <layout class="QHBoxLayout" name="horizontalLayout_268">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -2307,7 +2791,7 @@ QGroupBox::title {
                             <number>0</number>
                            </property>
                            <property name="topMargin">
-                            <number>0</number>
+                            <number>15</number>
                            </property>
                            <property name="rightMargin">
                             <number>0</number>
@@ -2329,10 +2813,22 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_17">
+                            <widget class="QLabel" name="label_265">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>50</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -2340,7 +2836,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>What are the potential risks and uncertainties? (e.g., Lack of test data, resource constraints)</string>
+                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -2351,14 +2847,26 @@ QGroupBox::title {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QFrame" name="frame_14">
+                         <widget class="QFrame" name="frame_263">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>50</height>
+                           </size>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_19">
+                          <layout class="QHBoxLayout" name="horizontalLayout_269">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -2388,10 +2896,16 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_18">
+                            <widget class="QLabel" name="label_266">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -2399,7 +2913,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>How to assess risk severity and likelihood? (e.g., using a risk matrix to evaluate impact and probability)</string>
+                              <string>How to define expected outcomes and success criteria? (e.g., Successful completion of a transaction, accurate data validation)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -2410,14 +2924,20 @@ QGroupBox::title {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QFrame" name="frame_15">
+                         <widget class="QFrame" name="frame_264">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_20">
+                          <layout class="QHBoxLayout" name="horizontalLayout_270">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -2447,10 +2967,22 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_19">
+                            <widget class="QLabel" name="label_267">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>50</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -2458,8 +2990,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>What risk mitigation strategies or contingency plans to implement? (e.g., Creating backup test data, allocating additional resources for critical tasks)
- </string>
+                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -2473,26 +3004,55 @@ QGroupBox::title {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QGroupBox" name="groupBox_7">
+                      <widget class="QGroupBox" name="groupBox_3">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>100</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>200</height>
+                        </size>
+                       </property>
                        <property name="font">
                         <font>
-                         <family>Arial Rounded MT Bold</family>
                          <pointsize>-1</pointsize>
                         </font>
                        </property>
                        <property name="title">
-                        <string>Schedule:</string>
+                        <string>Objective:</string>
                        </property>
-                       <layout class="QVBoxLayout" name="verticalLayout_15">
+                       <layout class="QVBoxLayout" name="verticalLayout_106">
+                        <property name="spacing">
+                         <number>10</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>15</number>
+                        </property>
                         <item>
-                         <widget class="QFrame" name="frame_16">
+                         <widget class="QFrame" name="frame_259">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_21">
+                          <layout class="QHBoxLayout" name="horizontalLayout_265">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -2500,7 +3060,7 @@ QGroupBox::title {
                             <number>0</number>
                            </property>
                            <property name="topMargin">
-                            <number>0</number>
+                            <number>15</number>
                            </property>
                            <property name="rightMargin">
                             <number>0</number>
@@ -2522,10 +3082,22 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_20">
+                            <widget class="QLabel" name="label_262">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>50</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -2533,7 +3105,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>What is the timeline or schedule for testing? (e.g., Testing phase from week 3 to week 5 of the project timeline)</string>
+                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -2544,14 +3116,26 @@ QGroupBox::title {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QFrame" name="frame_17">
+                         <widget class="QFrame" name="frame_260">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>50</height>
+                           </size>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_22">
+                          <layout class="QHBoxLayout" name="horizontalLayout_266">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -2581,10 +3165,16 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_21">
+                            <widget class="QLabel" name="label_263">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -2592,7 +3182,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>What milestones or checkpoints to set? (e.g., Completion of test case development by week 4, test execution kickoff meeting by week 2)</string>
+                              <string>How to define expected outcomes and success criteria? (e.g., Successful completion of a transaction, accurate data validation)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -2603,14 +3193,20 @@ QGroupBox::title {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QFrame" name="frame_18">
+                         <widget class="QFrame" name="frame_261">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_23">
+                          <layout class="QHBoxLayout" name="horizontalLayout_267">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -2640,10 +3236,22 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_22">
+                            <widget class="QLabel" name="label_264">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>50</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -2651,7 +3259,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>How to allocate time for different activities? (e.g., Allowing 2 weeks for regression testing, 1 week for performance testing)</string>
+                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -2665,26 +3273,55 @@ QGroupBox::title {
                       </widget>
                      </item>
                      <item>
-                      <widget class="QGroupBox" name="groupBox_5">
+                      <widget class="QGroupBox" name="groupBox_82">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>100</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>200</height>
+                        </size>
+                       </property>
                        <property name="font">
                         <font>
-                         <family>Arial Rounded MT Bold</family>
                          <pointsize>-1</pointsize>
                         </font>
                        </property>
                        <property name="title">
-                        <string>Roles and Responsibilities:</string>
+                        <string>Objective:</string>
                        </property>
-                       <layout class="QVBoxLayout" name="verticalLayout_13">
+                       <layout class="QVBoxLayout" name="verticalLayout_112">
+                        <property name="spacing">
+                         <number>10</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>15</number>
+                        </property>
                         <item>
-                         <widget class="QFrame" name="frame_10">
+                         <widget class="QFrame" name="frame_277">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_15">
+                          <layout class="QHBoxLayout" name="horizontalLayout_283">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -2692,7 +3329,7 @@ QGroupBox::title {
                             <number>0</number>
                            </property>
                            <property name="topMargin">
-                            <number>0</number>
+                            <number>15</number>
                            </property>
                            <property name="rightMargin">
                             <number>0</number>
@@ -2714,10 +3351,22 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_14">
+                            <widget class="QLabel" name="label_280">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>50</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -2725,7 +3374,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>What are the roles and responsibilities of team members? (e.g., Test lead responsible for test planning, developers responsible for fixing defects)</string>
+                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -2736,14 +3385,26 @@ QGroupBox::title {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QFrame" name="frame_11">
+                         <widget class="QFrame" name="frame_278">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>50</height>
+                           </size>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_16">
+                          <layout class="QHBoxLayout" name="horizontalLayout_284">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -2773,10 +3434,16 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_15">
+                            <widget class="QLabel" name="label_281">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -2784,7 +3451,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>Who are the key stakeholders and their roles? (e.g., Product owner for requirements clarification, business analyst for providing test data)</string>
+                              <string>How to define expected outcomes and success criteria? (e.g., Successful completion of a transaction, accurate data validation)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -2795,14 +3462,20 @@ QGroupBox::title {
                          </widget>
                         </item>
                         <item>
-                         <widget class="QFrame" name="frame_12">
+                         <widget class="QFrame" name="frame_279">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::StyledPanel</enum>
                           </property>
                           <property name="frameShadow">
                            <enum>QFrame::Raised</enum>
                           </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_17">
+                          <layout class="QHBoxLayout" name="horizontalLayout_285">
                            <property name="spacing">
                             <number>8</number>
                            </property>
@@ -2832,10 +3505,22 @@ QGroupBox::title {
                             </widget>
                            </item>
                            <item>
-                            <widget class="QLabel" name="label_16">
+                            <widget class="QLabel" name="label_282">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>50</height>
+                              </size>
+                             </property>
                              <property name="font">
                               <font>
-                               <family>Cascadia Mono</family>
+                               <family>Arial Rounded MT Bold</family>
                                <pointsize>10</pointsize>
                                <weight>50</weight>
                                <italic>false</italic>
@@ -2843,7 +3528,7 @@ QGroupBox::title {
                               </font>
                              </property>
                              <property name="text">
-                              <string>How to define communication channels and reporting? (e.g., Weekly status meetings with stakeholders, defect tracking via a designated tools)</string>
+                              <string>Which functionalities or features to be tested? (e.g., User registration, product search)</string>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -2861,10 +3546,16 @@ QGroupBox::title {
                   </item>
                   <item>
                    <widget class="QPushButton" name="newbtn_3">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
-                      <height>0</height>
+                      <height>50</height>
                      </size>
                     </property>
                     <property name="maximumSize">
@@ -4780,31 +5471,6 @@ color: rgb(255, 255, 255);</string>
   <tabstop>scrollArea_2</tabstop>
   <tabstop>c1</tabstop>
   <tabstop>c2</tabstop>
-  <tabstop>c3</tabstop>
-  <tabstop>c4</tabstop>
-  <tabstop>c5</tabstop>
-  <tabstop>c6</tabstop>
-  <tabstop>c7</tabstop>
-  <tabstop>c8</tabstop>
-  <tabstop>c9</tabstop>
-  <tabstop>c10</tabstop>
-  <tabstop>c11</tabstop>
-  <tabstop>c12</tabstop>
-  <tabstop>c13</tabstop>
-  <tabstop>c14</tabstop>
-  <tabstop>c15</tabstop>
-  <tabstop>c16</tabstop>
-  <tabstop>c17</tabstop>
-  <tabstop>c18</tabstop>
-  <tabstop>c19</tabstop>
-  <tabstop>c20</tabstop>
-  <tabstop>c21</tabstop>
-  <tabstop>c22</tabstop>
-  <tabstop>c23</tabstop>
-  <tabstop>c24</tabstop>
-  <tabstop>c25</tabstop>
-  <tabstop>c26</tabstop>
-  <tabstop>c27</tabstop>
   <tabstop>newbtn_3</tabstop>
   <tabstop>scrollArea_3</tabstop>
   <tabstop>cb1</tabstop>

@@ -250,7 +250,7 @@ if __name__ == "__main__":
         sys.exit(1)
     window = loader.load(".\\resources\\loginpage.ui", None)
     window.show()
-    checkboxes = [getattr(windowmain, f"cb{a}", None) for a in range(1, 28)]
+    checkboxes = [getattr(windowmain, f"c{a}", None) for a in range(1, 28)]
     windowmain.n2.hide()
     windowmain.n3.hide()
     windowmain.n4.hide()
