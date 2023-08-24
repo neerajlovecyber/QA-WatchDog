@@ -32,7 +32,7 @@ def exitfcn():
     windowmain.n14.hide()
     windowmain.n15.hide()
     windowmain.pbar.hide()
-    int_list=[0] * 27 
+    int_list=[0] * 67 
     set_checkbox_states(checkboxes, int_list)
 
 def update_project_names():
@@ -66,7 +66,7 @@ def register_clicked():
     global username, password, collection
     username = window.username.text()
     password = window.password.text()
-    data = {"p1": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+    data = {"p1": [0]*67}
     register_success, register_msg = register_user(collection, username, password, data)
     print(register_msg)
     if register_success:
@@ -103,7 +103,7 @@ def get_project_names(data):
 
 def checkboxcheck():
     checkboxlist = []
-    for a in range(1, 28):
+    for a in range(1, 68):
         checkbox_name = f"c{a}"
         checkbox = getattr(windowmain, checkbox_name, None)
         
@@ -151,8 +151,11 @@ def connect_to_mongodb():
 
 def register_user(collection, username, password, data):
     # Check if the username is already taken
+    global currentproject
     if collection.find_one({"username": username}):
         window.logmsg.setText("Username already taken")
+        currentproject = windowmain.newpname.text()
+
         return False, "Username already taken"
 
     # Insert user data into the collection
@@ -183,7 +186,7 @@ def setusername():
     windowmain.usernamefield.setText("Hello, "+username)
 def regiterproject():
     windowmain.pbar.show()
-    
+    global currentproject
     def hidebtn():
         global username  # Access the global username variable
         projectname = windowmain.newpname.text()
@@ -201,9 +204,10 @@ def regiterproject():
                 
                 # Update the MongoDB document with the new project name and data
                 collection.update_one({"username": username}, {"$set": {"data": new_data}})
-                
+                global currentproject
+                currentproject=windowmain.newpname.text()
                 set_checkbox_states(checkboxes, new_data[projectname])  # Set checkbox states for the updated project
-                
+                currentproject=windowmain.newpname.text()
                 windowmain.n1.setText(projectname) 
                 windowmain.n1.show()
                 windowmain.pbar.hide()
@@ -239,21 +243,13 @@ def addnewproject():
             
             projectname = windowmain.newpname.text()            
             label_name = f"n{total_projects}"
-                
-            # Set the text of the label
-            # label = getattr(windowmain, label_name)
-            # label.setText(projectname)
-                
-            # # Show the QLabel
-            # label.show()
-                
-            # Update the current project
+        
             currentproject = projectname 
             print(currentproject) # Update the current project name
             windowmain.projectlabel.setText(currentproject)
             windowmain.projectlabel.repaint()
             # Set checkbox values to 0 for the new project
-            new_project_data = [0] * 27  # Initialize with 27 zeros
+            new_project_data = [0] * 67  # Initialize with 67 zeros
             set_checkbox_states(checkboxes, new_project_data)
                 
             # Trigger layout update            
@@ -266,7 +262,9 @@ def addnewproject():
                 
             windowmain.pbar.hide()
             update_project_names()
+            projectname = windowmain.newpname.text()   
             currentproject=projectname
+            print(currentproject)
             set_checkbox_states(checkboxes,new_project_data) 
     windowmain.newpbtn.clicked.connect(hidebtn)
 
@@ -310,6 +308,7 @@ if __name__ == "__main__":
     username = ""
     password = ""
     project_names = []
+    currentproject=""
     app = QtWidgets.QApplication([])  # Create the application instance
     
     loader = QtUiTools.QUiLoader()
@@ -325,7 +324,7 @@ if __name__ == "__main__":
     window = loader.load(".\\resources\\loginpage.ui", None)
     window.show()
     
-    checkboxes = [getattr(windowmain, f"c{a}", None) for a in range(1, 28)]
+    checkboxes = [getattr(windowmain, f"c{a}", None) for a in range(1, 68)]
     windowmain.n2.hide()
     windowmain.n3.hide()
     windowmain.n4.hide()
@@ -371,6 +370,8 @@ if __name__ == "__main__":
         windowmain.n13.clicked.connect(lambda: project_menu(13))
         windowmain.n14.clicked.connect(lambda: project_menu(14))
         windowmain.n15.clicked.connect(lambda: project_menu(15))
+        windowmain.next1.clicked.connect(lambda: windowmain.stackedWidget.setCurrentWidget(windowmain.page2))
+        windowmain.next2.clicked.connect(lambda: windowmain.stackedWidget.setCurrentWidget(windowmain.page1))
         windowmain.logout.clicked.connect(exitfcn)
 
       #############333333333
