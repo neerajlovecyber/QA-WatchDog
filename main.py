@@ -13,6 +13,8 @@ def exitfcn():
     project_names = [] 
     windowmain.close()  # Close the main window
     window.show()  # Show the login window again
+    windowmain.projectlabel.setText("No Projects to show")
+    windowmain.projectlabel.repaint()
     windowmain.n1.hide()
     windowmain.n2.hide()
     windowmain.n3.hide()
@@ -57,6 +59,8 @@ def update_project_names():
                 label.show()
                 n += 1
 
+ 
+
 
 def register_clicked():
     global username, password, collection
@@ -86,7 +90,9 @@ def login_clicked():
         if user_data:
             project_names = get_project_names(user_data["data"])
             print("Project names:", project_names)
-            update_project_names()  # Initialize project names
+            update_project_names() 
+            windowmain.projectlabel.setText(currentproject)
+            windowmain.projectlabel.repaint() # Initialize project names
         show_main_window()
 
             
@@ -175,14 +181,6 @@ def login_user(collection, username, password):
         return False, "User not found"
 def setusername():
     windowmain.usernamefield.setText("Hello, "+username)
-# def regiterproject():
-#     windowmain.pbar.show()
-#     def hidebtn():
-#         projectname=windowmain.newpname.text()
-#         windowmain.n1.setText(projectname) 
-#         windowmain.n1.show()
-#         windowmain.pbar.hide()
-#     windowmain.newpbtn.clicked.connect(hidebtn)
 def regiterproject():
     windowmain.pbar.show()
     
@@ -223,10 +221,12 @@ def addnewproject():
     if user_data:
         total_projects = len(user_data.get("data", {}))
         if total_projects >= 14:
-            print("Maximum number of projects reached (15)")
-            
+            print("Maximum projects limit reached (15)")
+            windowmain.projectlabel.setText("Max projects limit reached")
+            windowmain.projectlabel.repaint()
             windowmain.pbar.hide()
             return
+    
      
 
     def hidebtn():
@@ -248,8 +248,10 @@ def addnewproject():
             # label.show()
                 
             # Update the current project
-            currentproject = projectname  # Update the current project name
-            
+            currentproject = projectname 
+            print(currentproject) # Update the current project name
+            windowmain.projectlabel.setText(currentproject)
+            windowmain.projectlabel.repaint()
             # Set checkbox values to 0 for the new project
             new_project_data = [0] * 27  # Initialize with 27 zeros
             set_checkbox_states(checkboxes, new_project_data)
@@ -264,6 +266,8 @@ def addnewproject():
                 
             windowmain.pbar.hide()
             update_project_names()
+            currentproject=projectname
+            set_checkbox_states(checkboxes,new_project_data) 
     windowmain.newpbtn.clicked.connect(hidebtn)
 
 def project_menu(btn):
@@ -279,6 +283,8 @@ def project_menu(btn):
     user_data = collection.find_one({"username": username})
     int_list = user_data["data"][name]
     set_checkbox_states(checkboxes, int_list)
+    windowmain.projectlabel.setText(currentproject)
+    windowmain.projectlabel.repaint()
     
 
 def save():
