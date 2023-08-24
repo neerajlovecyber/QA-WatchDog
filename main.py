@@ -9,30 +9,54 @@ def show_main_window():
 
 def exitfcn():
     save()
-    exit()
+    global project_names  # Access the global project_names variable
+    project_names = [] 
+    windowmain.close()  # Close the main window
+    window.show()  # Show the login window again
+    windowmain.n1.hide()
+    windowmain.n2.hide()
+    windowmain.n3.hide()
+    windowmain.n4.hide()
+    windowmain.n1.hide()
+    windowmain.n5.hide()
+    windowmain.n6.hide()
+    windowmain.n7.hide()
+    windowmain.n8.hide()
+    windowmain.n9.hide()
+    windowmain.n10.hide()
+    windowmain.n11.hide()
+    windowmain.n12.hide()
+    windowmain.n13.hide()
+    windowmain.n14.hide()
+    windowmain.n15.hide()
+    windowmain.pbar.hide()
+    int_list=[0] * 27 
+    set_checkbox_states(checkboxes, int_list)
+
 def update_project_names():
+    global currentproject  # Add this line to access the global variable
     user_data = collection.find_one({"username": username})
     if user_data:
         project_names = get_project_names(user_data["data"])
         print("Project names:", project_names)
         
-                    # Set the project name according to the first project in the list
+        # Set the project name according to the first project in the list
         first_project_name = project_names[0] if project_names else None
         if first_project_name:
             windowmain.n1.setText(first_project_name)
             windowmain.n1.show()
             int_list = user_data["data"][first_project_name]
             set_checkbox_states(checkboxes, int_list)
-            n=1
-            for names in project_names:
-                        
-                label_name = f"n{n}"
+            currentproject = first_project_name  # Set the current project to the first project name
             
-                            # Set the text of the label
+            n = 1
+            for names in project_names:
+                label_name = f"n{n}"
                 label = getattr(windowmain, label_name)
                 label.setText(names)
                 label.show()
-                n=n+1
+                n += 1
+
 
 def register_clicked():
     global username, password, collection
