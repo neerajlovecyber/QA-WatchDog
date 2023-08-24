@@ -1,8 +1,12 @@
 from PySide6 import QtWidgets, QtUiTools, QtCore
-import sys, os
+import sys
 import pymongo
 import socket
 from resources import nspc
+def show_main_window():
+    windowmain.showMaximized()
+
+
 def exitfcn():
     save()
     exit()
@@ -29,6 +33,38 @@ def update_project_names():
                 label.setText(names)
                 label.show()
                 n=n+1
+
+def register_clicked():
+    global username, password, collection
+    username = window.username.text()
+    password = window.password.text()
+    data = {"p1": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+    register_success, register_msg = register_user(collection, username, password, data)
+    print(register_msg)
+    if register_success:
+        window.close()
+        setusername()
+        regiterproject()  # Initialize new project registration
+        show_main_window()
+
+def login_clicked():
+    global username, password, collection, project_names
+    username = window.username.text()
+    password = window.password.text()
+
+    login_success, login_msg = login_user(collection, username, password)
+    print(login_msg)
+    if login_success:
+        window.close()
+        setusername()
+        user_data = collection.find_one({"username": username})
+
+        if user_data:
+            project_names = get_project_names(user_data["data"])
+            print("Project names:", project_names)
+            update_project_names()  # Initialize project names
+        show_main_window()
+
             
 def get_project_names(data):
     # Extract the keys from the "data" dictionary to get the project names
@@ -38,7 +74,7 @@ def get_project_names(data):
 def checkboxcheck():
     checkboxlist = []
     for a in range(1, 28):
-        checkbox_name = f"cb{a}"
+        checkbox_name = f"c{a}"
         checkbox = getattr(windowmain, checkbox_name, None)
         
         if checkbox is not None and isinstance(checkbox, checkbox.__class__):
@@ -63,17 +99,21 @@ def set_checkbox_states(checkboxes, int_list):
 
 
 def connect_to_mongodb():
+    global collection  # Make 'collection' a global variable so you can use it outside this function
     try:
         # Attempt to establish a connection to the MongoDB database
         client = pymongo.MongoClient("mongodb+srv://neerajlovecyber:gamersnsp@rdtdb.grubyrx.mongodb.net/?retryWrites=true&w=majority")
         db = client["records"]
         collection = db["records"]
 
+        window.logmsg.setText("Connected to MongoDB and internet")
         print("Connected to MongoDB")
         return collection
     except pymongo.errors.ConnectionFailure:
+        window.logmsg.setText("Failed to connect to MongoDB. Please check your internet connection.")
         print("Failed to connect to MongoDB. Please check your internet connection.")
     except socket.gaierror:
+        window.logmsg.setText("Failed to resolve host. Please check your internet connection and host name.")
         print("Failed to resolve host. Please check your internet connection and host name.")
     return None
 
@@ -82,6 +122,7 @@ def connect_to_mongodb():
 def register_user(collection, username, password, data):
     # Check if the username is already taken
     if collection.find_one({"username": username}):
+        window.logmsg.setText("Username already taken")
         return False, "Username already taken"
 
     # Insert user data into the collection
@@ -90,7 +131,7 @@ def register_user(collection, username, password, data):
         "password": password,
         "data": data
     })
-
+    window.logmsg.setText("Registration successful")
     return True, "Registration successful"
 
 def login_user(collection, username, password):
@@ -99,9 +140,13 @@ def login_user(collection, username, password):
     if user:
         # Check if the provided password matches
         if user["password"] == password:
+            window.logmsg.setText("Login Successful")
             return True, "Login successful"
+            
         else:
+            window.logmsg.setText("Invalid password")
             return False, "Invalid password"
+
     else:
         return False, "User not found"
 def setusername():
@@ -232,10 +277,9 @@ def save():
 
 if __name__ == "__main__":
     print("Program start.")
-    username=""
-    password=""
-    currentproject=""
-    project_names=[]
+    username = ""
+    password = ""
+    project_names = []
     app = QtWidgets.QApplication([])  # Create the application instance
     
     loader = QtUiTools.QUiLoader()
@@ -243,13 +287,14 @@ if __name__ == "__main__":
     ui_file.open(QtCore.QFile.ReadOnly)
     windowmain = loader.load(ui_file)
     ui_file.close()
-    windowmain.showMaximized()
 
     if windowmain is None:
         print("Failed to load UI file.")
         sys.exit(1)
+    
     window = loader.load(".\\resources\\loginpage.ui", None)
     window.show()
+    
     checkboxes = [getattr(windowmain, f"c{a}", None) for a in range(1, 28)]
     windowmain.n2.hide()
     windowmain.n3.hide()
@@ -272,64 +317,8 @@ if __name__ == "__main__":
     if collection is not None:
         print("Connected to MongoDB")
 
-        def register_clicked():
-            global username
-            global password
-            username = window.username.text()
-            password = window.password.text()
-            data = {"p1": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-            register_success, register_msg = register_user(collection, username, password, data)
-            print(register_msg)
-            if register_success:
-                window.close()
-                setusername()
-                windowmain.main_body.setEnabled(True)
-                regiterproject()
-           
-
-        def login_clicked():
-            global username
-            global password
-            global project_names
-            username = window.username.text()
-            password = window.password.text()
-
-            login_success, login_msg = login_user(collection, username, password)
-            print(login_msg)
-            if login_success:
-                
-                window.close()
-                setusername()
-                windowmain.main_body.setEnabled(True)
-                user_data = collection.find_one({"username": username})
-                
-
-                if user_data:
-                    project_names = get_project_names(user_data["data"])
-                    print("Project names:", project_names)
-        
-                    # Set the project name according to the first project in the list
-                    first_project_name = project_names[0] if project_names else None
-                    if first_project_name:
-                        windowmain.n1.setText(first_project_name)
-                        windowmain.n1.show()
-                        int_list = user_data["data"][first_project_name]
-                        set_checkbox_states(checkboxes, int_list)
-                    n=1
-                    for names in project_names:
-                        
-                        label_name = f"n{n}"
-            
-                            # Set the text of the label
-                        label = getattr(windowmain, label_name)
-                        label.setText(names)
-                        label.show()
-                        n=n+1
-            
-
-            
-            # Trigger layout update            
-        windowmain.layout().update()
+        window.registerbtn.clicked.connect(register_clicked)
+        window.loginbtn.clicked.connect(login_clicked)
 
         
         window.registerbtn.clicked.connect(register_clicked)
