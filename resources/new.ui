@@ -1081,7 +1081,7 @@ color:white;</string>
 </string>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="page1">
              <property name="sizePolicy">
@@ -1154,7 +1154,7 @@ QGroupBox::title {
                  <property name="geometry">
                   <rect>
                    <x>0</x>
-                   <y>-1121</y>
+                   <y>0</y>
                    <width>1057</width>
                    <height>1915</height>
                   </rect>
@@ -3775,7 +3775,7 @@ QGroupBox::title {
                  <property name="geometry">
                   <rect>
                    <x>0</x>
-                   <y>-1117</y>
+                   <y>0</y>
                    <width>1057</width>
                    <height>1907</height>
                   </rect>
