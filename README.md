@@ -1,6 +1,7 @@
 # QA WatchDog: Simplifying Your QA Testing Process
 
-![QA WatchDog Banner](ScreenShots/v5_14.png)
+<img src="extras/logo.png" alt="QA WatchDog Banner" width="250" height="250">
+
 
 QA WatchDog is a Python-based tool meticulously crafted by Neeraj Singh to streamline Quality Assurance (QA) testing. With a focus on ease of use and collaboration, this tool empowers QA testers to efficiently track progress and manage their testing checklists.
 
@@ -14,12 +15,16 @@ QA WatchDog is a Python-based tool meticulously crafted by Neeraj Singh to strea
 - **Simple Installation**: Install with ease using the setup file from the [Releases](https://github.com/neerajlovecyber/QA-WatchDog/releases) page.
 - **Organize with Multiple Checklists**: Manage all your QA test checklists conveniently within a single account.
 
-## Explore QA WatchDog
-### Home Tab
-![Home Tab](ScreenShots/Screenshot%202023-07-20%20233021.png)
 
 ### Quick Overview
-![Quick Overview](ScreenShots/Screenshot%202023-07-21%20105459.png)
+![Quick Overview](extras/demo.gif)
+
+## Explore QA WatchDog
+
+Home Tab           |  Security Tab
+:-------------------------:|:-------------------------:
+![Home Tab](extras/home.png)  |  ![Login Tab](extras/login.png)
+
 
 ## Getting Started
 1. **Download**: Get the setup file from our [Releases](https://github.com/neerajlovecyber/QA-WatchDog/releases) page.
