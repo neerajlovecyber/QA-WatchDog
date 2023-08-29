@@ -21,7 +21,7 @@ QA WatchDog is a Python-based tool meticulously crafted by Neeraj Singh to strea
 
 ## Explore QA WatchDog
 
-Home Tab           |  Security Tab
+Home Tab           |  Login Tab
 :-------------------------:|:-------------------------:
 ![Home Tab](extras/home.png)  |  ![Login Tab](extras/login.png)
 
